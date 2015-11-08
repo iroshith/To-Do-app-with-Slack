@@ -1,0 +1,1 @@
+web: gunicorn todoapps:app --log-file=-

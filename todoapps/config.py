@@ -1,0 +1,7 @@
+#-*- coding:utf-8 -*-
+import os
+
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+SECRET_KEY = SECRET_KEY
+
+SLACK_TOKEN = SLACK_TOKEN

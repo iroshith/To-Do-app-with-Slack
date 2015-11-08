@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Todo一覧</h1>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>タイトル</th>
+                <th>ステータス</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for content in contents %}
+            <tr>
+                <td>{{ content.id }}</td>
+                <td>{{ content.todo_title }}</td>
+                <td>{{ content.status }}</td>
+            </tr>
+            {% else %}
+                <td>Todoが登録されていません</td>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
