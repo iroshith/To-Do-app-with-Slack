@@ -3,27 +3,21 @@
     <head>
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title>todo管理</title>
+       <title>ToDo管理アプリ with slack</title>
+       <script src="https://code.jquery.com/jquery-latest.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-   </head>
+       <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    </head>
     <body>
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Todo一覧</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div class="margin">
+        <h2> To-Do app with Slack <a href="https://github.com/iroshith" target="_blank">@iroshith</a> </h2>
+        <br>
+    </div>
     <div class="container-fluid">
         <div class="row">
             {% block body %}{% endblock %}
         </div>
     </div>
-    <footer>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    </footer>
     </body>
 </html>

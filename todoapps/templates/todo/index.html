@@ -4,7 +4,6 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ユーザー</th>
                 <th>タイトル</th>
                 <th>開始日時</th>
                 <th>ステータス</th>
@@ -12,12 +11,23 @@
         </thead>
         <tbody>
             {% for content in contents %}
-            <tr>
-                <td>{{ content.user_name }}</td>
-                <td>{{ content.todo_title }}</td>
-                <td>{{ content.start_date }}</td>
-                <td>{{ content.status }}</td>
-            </tr>
+                {% if content.status %}
+                <tr>
+                    <td>{{ content.todo_title }}</td>
+                    <td>{{ content.start_date }}</td>
+                    <td>
+                        <form action="{{ url_for('update_todo', username=content.user_name) }}" method=post>
+                            <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-info">
+                                <input type="checkbox" name="check" value="{{ content.id }}" autocomplete="off">
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </label>
+                            </div>
+                            <input type="submit" value="update!" class="btn btn-outlined btn-success">
+                        </form>
+                    </td>
+                </tr>
+                {% endif %}
             {% else %}
                 <td>Todoが登録されていません</td>
             {% endfor %}

@@ -1,5 +1,5 @@
 # coding: utf-8
-from sqlalchemy import Column, Integer, Unicode, UnicodeText
+from sqlalchemy import Column, Integer, Unicode, UnicodeText, DateTime, Boolean
 from todoapps import db
 
 
@@ -9,11 +9,11 @@ class Todo(db.Model):
     """
     __tablename__ = "todo"
     id = Column(Integer, primary_key=True)
-    user_name = Column(Unicode(255), nullable=False, unique=True)
+    user_name = Column(Unicode(255), nullable=False)
     todo_title = Column(UnicodeText)
-    start_date = Column(Unicode(255))
-    end_date = Column(Unicode(255))
-    status = Column(UnicodeText)
+    start_date = Column(DateTime)
+    end_date = Column(DateTime)
+    status = Column(Boolean)
 
     #初期化
     def __init__(self, user_name, todo_title, start_date, end_date, status):
