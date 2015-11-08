@@ -20,10 +20,10 @@ class Message(object):
             msg.user_name = params['user_name']
             msg.trigger_word = params['trigger_word']
 
-            msg.args = msg.text.split()
+            msg.args = params['text'].split()
             if len(msg.args) > 0:
                 msg.command = msg.args[0]
-                msg.text = params['text'].replace(msg.command, '')
+                msg.text = ''.join(msg.args[1:])
             else:
                 msg.text = params['text']
 

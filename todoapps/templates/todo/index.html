@@ -1,20 +1,21 @@
 {% extends "base.html" %}
 {% block body %}
-<h1>Todo一覧</h1>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>ユーザー</th>
                 <th>タイトル</th>
+                <th>開始日時</th>
                 <th>ステータス</th>
             </tr>
         </thead>
         <tbody>
             {% for content in contents %}
             <tr>
-                <td>{{ content.id }}</td>
+                <td>{{ content.user_name }}</td>
                 <td>{{ content.todo_title }}</td>
+                <td>{{ content.start_date }}</td>
                 <td>{{ content.status }}</td>
             </tr>
             {% else %}
